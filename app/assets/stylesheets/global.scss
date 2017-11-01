@@ -1,0 +1,19 @@
+.hidden-header {
+  display: none;
+}
+
+.navbar-default {
+  background-color: #27292b;
+  .navbar-brand {
+    color: #ffea00;
+    font-family: 'Comfortaa', cursive;
+  }
+}
+
+.jumbotron {
+  height: 330px;
+  background-image: url(kili.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

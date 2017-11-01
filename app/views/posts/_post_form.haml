@@ -1,0 +1,9 @@
+= form_for @post do |f|
+  = f.label :title
+  = f.text_field :title
+
+  = f.label :subtitle
+  = f.text_field :subtitle
+  
+  = f.cktext_area :content, class: 'wysiwyg-editor'
+  = f.submit 'Create Post', class: 'btn btn-primary'

@@ -6,10 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap-sass'
+gem 'ckeditor'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'paperclip'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
@@ -21,6 +23,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'foreman'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.6'
 end
