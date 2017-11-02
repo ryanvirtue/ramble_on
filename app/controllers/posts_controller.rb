@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      redirect_to post_path(@post)
+      redirect_to dashboard_path
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :subtitle, :content)
+    params.require(:post).permit(:title, :subtitle, :content, :publish)
   end
 
 end
