@@ -17,3 +17,13 @@ blockquote {
     display: inline-block;
   }
 }
+
+.post {
+  h2 {
+    text-decoration: underline;
+  }
+  h2, h3 {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+  }
+}
