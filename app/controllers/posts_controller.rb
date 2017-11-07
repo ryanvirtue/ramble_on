@@ -4,6 +4,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    unless current_user || @post.publish
+      redirect_to root_path
+    end
   end
 
   def new
@@ -33,7 +36,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      redirect_to dashboard_path
+      render :edit
     else
       render :edit
     end
