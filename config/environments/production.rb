@@ -3,7 +3,7 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     storage: :s3,
-    url: 'rambleon-assets.s3.amazonaws.com',
+    url: 'http://rambleon-assets.s3.amazonaws.com',
 
     s3_host_alias: 's3-us-west-2.amazonaws.com/rambleon-assets',
     s3_credentials: {
