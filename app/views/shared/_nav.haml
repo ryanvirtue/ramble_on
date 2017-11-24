@@ -1,9 +1,16 @@
-%nav.navbar.navbar-default
-  .container-fluid
+%nav.navbar.navbar-fixed-top.navbar-inverse
+  .container
     .navbar-header
-      = link_to root_path do
-        .navbar-brand
-          Ramble On
-    %ul.nav.navbar-nav.navbar-right
-      - if current_user
-        %li= link_to 'Log Out', destroy_user_session_path, method: 'delete'
+      %button.navbar-toggle.collapsed{'data-toggle': 'collapse', 'data-target':'#navbar'}
+        .sr-only
+          Toggle navigation
+        .icon-bar
+        .icon-bar
+        .icon-bar
+
+      = link_to 'Ramble On', root_path,  class: 'navbar-brand'
+
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        - if current_user
+          %li= link_to 'Log Out', destroy_user_session_path, method: 'delete'
