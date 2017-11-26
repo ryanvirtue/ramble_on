@@ -9,8 +9,10 @@
   .row
     .col-xs-12.col-sm-9
       .post.blog-post
-        - if @post
-          %h2= @post.title
-          %h3= @post.subtitle
-          %article
-            = @post.content.html_safe
+        - if @posts.any?
+          - @posts.each do |post|
+            %h2= post.title
+            %h3= post.subtitle
+            %article
+              = post.content.truncate(750).html_safe
+              = link_to 'Read more', post_path(post)

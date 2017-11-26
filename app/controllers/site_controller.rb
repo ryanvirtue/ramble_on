@@ -1,5 +1,5 @@
 class SiteController < ApplicationController
   def index
-    @post = Post.where(publish: true).last
+    @posts = Post.where(publish: true).sort_by { |post| post.created_at  }.reverse
   end
 end
