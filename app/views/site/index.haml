@@ -14,5 +14,5 @@
             %h2= post.title
             %h3= post.subtitle
             %article
-              = post.content.truncate(750).html_safe
+              = post.content.html_safe.truncate(750)
               = link_to 'Read more', post_path(post)
