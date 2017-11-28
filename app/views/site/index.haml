@@ -16,3 +16,4 @@
             %article
               = truncate_html(post.content.html_safe, length: 650, omission: '...(continued)')
               = link_to 'Read more', post_path(post)
+            %hr
