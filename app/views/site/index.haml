@@ -14,5 +14,5 @@
             %h2= post.title
             %h3= post.subtitle
             %article
-              = post.content.html_safe
-              -# = link_to 'Read more', post_path(post)
+              = truncate_html(post.content.html_safe, length: 650, omission: '...(continued)')
+              = link_to 'Read more', post_path(post)
