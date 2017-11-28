@@ -7,8 +7,8 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Comfortaa:700"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = analytics_init if GoogleAnalytics.valid_tracker?
-
+    - if Rails.env.production?
+      = analytics_init if GoogleAnalytics.valid_tracker?
   %body
     %h1.hidden-header Ramble On
     = render partial: 'shared/nav'
