@@ -1,5 +1,19 @@
-.jumbotron
-  .container-fluid
-    .text-center{style: 'color: #ffea00; font-family: "Comfortaa", cursive; weight: bold;'}
-      %h2
-        The ramblings of an unfit, slightly ranga kiwi and his journey to the top of the world's tallest freestanding mountain.
+.container
+  .row.row-offcanvas.row-offcanvas-right
+    .jumbotron
+      .col-xs-12.col-sm-12
+        .text-center{style: 'color: #ffea00; font-family: "Comfortaa", cursive; weight: bold;'}
+          %h2
+            The ramblings of an unfit, ranga kiwi and his journey to the top of the world's tallest freestanding mountain.
+
+  .row
+    .col-xs-12.col-sm-9
+      .post.blog-post
+        - if @posts.any?
+          - @posts.each do |post|
+            %h2= post.title
+            %h3= post.subtitle
+            %article
+              = truncate_html(post.content.html_safe, length: 650, omission: '...(continued)')
+              = link_to 'Read more', post_path(post)
+            %hr

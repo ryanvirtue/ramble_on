@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: :show
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     unless current_user || @post.publish
       redirect_to root_path
     end

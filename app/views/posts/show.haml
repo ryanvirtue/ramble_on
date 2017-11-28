@@ -5,4 +5,5 @@
         Edit Post
   %h2= @post.title
   %h3= @post.subtitle if @post.subtitle.present?
-  = @post.content.html_safe
+  .article
+    = @post.content.html_safe
