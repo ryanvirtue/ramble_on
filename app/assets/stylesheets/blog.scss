@@ -29,12 +29,10 @@ blockquote {
   }
 }
 
-.blog-post {
-  display: inline-block;
-  @media screen and (max-width: 480px) {
-    img {
-      width: 100%;
-    }
+@media screen and(max-width: 480px) {
+  img {
+    width: 100% !important;
+    margin: 0 !important;
   }
 }
 
