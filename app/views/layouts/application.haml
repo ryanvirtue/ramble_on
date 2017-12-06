@@ -11,5 +11,4 @@
       = analytics_init if GoogleAnalytics.valid_tracker?
   %body
     = render partial: 'shared/nav'
-    .container-fluid
-      = yield
+    = yield
