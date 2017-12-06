@@ -7,7 +7,7 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Comfortaa:700"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    - if Rails.env.production?
+    - if Rails.env.production? && !current_user
       = analytics_init if GoogleAnalytics.valid_tracker?
   %body
     = render partial: 'shared/nav'
