@@ -41,12 +41,12 @@ blockquote {
 
 @media screen and(max-width: 480px) {
   .left-float-wrap, .right-float-wrap {
-    width: 100% !important;
-    margin: 0 !important;
+    width: 100%;
+    margin: 0px;
   }
 
   .hide-on-mobile {
-    visibility: hidden;
+    display: none;
   }
 }
 
