@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  GA.tracker = ENV.fetch('GA_TRACKER_ID')
 
   config.paperclip_defaults = {
     storage: :s3,
