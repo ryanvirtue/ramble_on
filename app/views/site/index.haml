@@ -13,6 +13,7 @@
           .post.blog-post
             %h2= post.title
             %h3= post.subtitle
+            %p= post.created_at.strftime("%d %B %Y")
             %article
               = truncate_html(post.content.html_safe, length: 650, omission: '...(continued)')
               = link_to 'Read more', post_path(post)
