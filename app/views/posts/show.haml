@@ -1,9 +1,11 @@
-.post
-  - if current_user
-    = link_to edit_post_path(@post) do
-      .btn.btn-warning
-        Edit Post
-  %h2= @post.title
-  %h3= @post.subtitle if @post.subtitle.present?
-  %article
-    = @post.content.html_safe
+.container
+  .post
+    - if current_user
+      = link_to edit_post_path(@post) do
+        .btn.btn-warning
+          Edit Post
+    %h2= @post.title
+    %h3= @post.subtitle if @post.subtitle.present?
+    %p= @post.created_at.strftime("%d %B %Y")
+    %article
+      = @post.content.html_safe
