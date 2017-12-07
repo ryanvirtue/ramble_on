@@ -15,6 +15,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    if post_params[:publish] == true
+      @post.published_at = Time.now
+    end
     if @post.save
       redirect_to dashboard_path
     else
@@ -35,7 +38,11 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.friendly.find(params[:id])
-    if @post.update_attributes(post_params)
+    @post.assign_attributes(post_params)
+    if @post.publish_changed?
+      @post.published_at = Time.now if @post.publish
+    end
+    if @post.save
       redirect_to post_path(@post)
     else
       render :edit
