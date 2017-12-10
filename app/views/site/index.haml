@@ -13,7 +13,7 @@
           .post.blog-post
             %h2= post.title
             %h3= post.subtitle
-            %p= post.published_at.strftime("%d %B %Y")
+            %p= post.published_at.strftime("%d %B %Y") if post.published_at.present?
             %article
               = truncate_html(post.content.html_safe, length: 650, omission: '...(continued)')
               = link_to 'Read more', post_path(post)
