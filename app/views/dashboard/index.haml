@@ -1,10 +1,11 @@
-.container
+.container{style: 'margin-bottom: 20px;'}
   %table.table.table-striped
     %thead
       %tr
         %th Title
         %th Date Created
         %th Published?
+        %th
     %tbody
       - @posts.each do |post|
         %tr
@@ -15,6 +16,10 @@
               .fa.fa-check
             - else
               .fa.fa-times
+          %td
+            = link_to post_path(post), method: 'delete', data: {confirm: 'Are you sure?'} do
+              .btn.btn-xs.btn-danger
+                Delete
 
   = link_to new_post_path do
     .btn.btn-success
