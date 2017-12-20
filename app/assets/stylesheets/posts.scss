@@ -8,3 +8,12 @@
   background-color: #FAFAFA;
   font-size: 14px;
 }
+
+@media screen and (max-width: 480px) {
+  .img-captioned {
+    margin: 0;
+    img {
+      width: 100% !important;
+    }
+  }
+}
