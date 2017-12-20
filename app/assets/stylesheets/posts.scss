@@ -19,5 +19,6 @@
 
   .mobile-image {
     width: 100% !important;
+    height: calc(width * 0.372) !important
   }
 }
