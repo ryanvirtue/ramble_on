@@ -1,20 +1,21 @@
-.container{style: 'margin-bottom: 20px; '}
-  .row.row-offcanvas.row-offcanvas-right
-    .jumbotron
-      .col-xs-12.col-sm-12
-        .text-center{style: 'color: #ffea00; font-family: "Comfortaa", cursive; weight: bold;'}
-          %h1{style: "font-size:2.2em;"}
-            The ramblings of an unfit, ranga kiwi and his journey to the top of the world's tallest freestanding mountain.
+.img-banner
+  .container{style: 'margin-bottom: 20px; '}
+    .text-center{style: 'color: #ffea00; font-family: "Allerta Stencil", cursive; weight: bold; padding: 20px 0;'}
+      %h1.hidden-xs{style: "font-size:2.2em;"}
+        The ramblings of an unfit kiwi on his journey to conquor Mount Kilimanjaro while raising funds for spinal injury research.
+      %h1.visible-xs{style: "font-size:2.2em;"}
+        The ramblings of one kiwi's journey to conquor Mount Kilimanjaro for spinal injury research.
 
-  .row
-    .col-xs-12.col-sm-9
-      - if @posts.any?
-        - @posts.each do |post|
-          .post.blog-post
-            %h2= post.title
-            %h3= post.subtitle
-            %p= post.published_at.strftime("%d %B %Y") if post.published_at.present?
-            %article
-              = truncate_html(post.content.html_safe, length: 650, omission: '...(continued)')
-              = link_to 'Read more', post_path(post)
-          %hr
+      = link_to 'Donate via Givealittle', 'https://givealittle.co.nz/fundraiser/two-halves-a-whole-and-a-hill', class: 'btn btn-primary btn-lg', style: 'background-color: #ffea00; color: #000000; border-color: #ffea00; font-family: Allerta Stencil;'
+
+
+- if @posts.any?
+  - @posts.each do |post|
+    .post.blog-post
+      %h2= post.title
+      %h3= post.subtitle
+      %p= post.published_at.strftime("%d %B %Y") if post.published_at.present?
+      %article
+        = truncate_html(post.content.html_safe, length: 650, omission: '...(continued)')
+        = link_to 'Read more', post_path(post)
+    %hr
