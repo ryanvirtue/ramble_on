@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    raise params.inspect
+    raise post_params.inspect
     @post = Post.friendly.find(params[:id])
     @post.assign_attributes(post_params)
     if @post.publish_changed?
