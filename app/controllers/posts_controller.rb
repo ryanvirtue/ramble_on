@@ -45,8 +45,7 @@ class PostsController < ApplicationController
       @post.published_at = Time.now if @post.publish
     end
     if @post.save
-      raise @post.inspect
-      redirect_to post_path(@post)
+      redirect_to dashboard_path
     else
       render :edit
     end
