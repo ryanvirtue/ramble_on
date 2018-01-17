@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @tags = Tag.all
   end
 
   def create
@@ -34,6 +35,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.friendly.find(params[:id])
+    @tags = Tag.all
   end
 
   def update
@@ -52,7 +54,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :subtitle, :content, :publish)
+    params.require(:post).permit(:title, :subtitle, :content, :publish, :feature, tag_ids: [])
   end
 
 end

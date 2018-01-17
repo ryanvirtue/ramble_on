@@ -1,0 +1,4 @@
+.col-sm-3
+  = form_with model: Tag.new, id: 'new_tag' do |f|
+    = f.text_field :name, class: 'form-control'
+    = f.submit class: 'btn btn-primary'

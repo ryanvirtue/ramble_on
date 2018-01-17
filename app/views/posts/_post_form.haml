@@ -11,4 +11,16 @@
   .form-group
     = f.check_box :publish
     = f.label :publish
+  .form-group
+    = f.check_box :feature
+    = f.label :feature
+  .form-group
+    = f.select :tag_ids, @tags.collect{|t| [t.name, t.id]}, {}, multiple: true, class: 'tag-select browser-default', data: {select_two: true}
+
   = f.submit 'Save', class: 'btn btn-primary'
+
+
+:javascript
+  $('select').select2({
+    width: '100%'
+  });
