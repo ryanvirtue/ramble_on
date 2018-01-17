@@ -39,13 +39,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    raise post_params.inspect
     @post = Post.friendly.find(params[:id])
     @post.assign_attributes(post_params)
     if @post.publish_changed?
       @post.published_at = Time.now if @post.publish
     end
     if @post.save
+      raise @post.inspect
       redirect_to post_path(@post)
     else
       render :edit
